@@ -7,6 +7,7 @@ public class Notebook {
 	int estoque;
 	double precoUnitario;
 	String figura;
+	String dataCadastro;
 	/**
 	 * @return the numeroLote
 	 */
@@ -91,5 +92,33 @@ public class Notebook {
 	public void setDataCadastro(String dataCadastro) {
 		this.dataCadastro = dataCadastro;
 	}
-	String dataCadastro;
+	public Notebook(int numeroLote, String modelo, String descricao, int estoque, double precoUnitario, String figura,
+			String dataCadastro) {
+		super();
+		this.numeroLote = numeroLote;
+		this.modelo = modelo;
+		this.descricao = descricao;
+		this.estoque = estoque;
+		this.precoUnitario = precoUnitario;
+		this.figura = figura;
+		this.dataCadastro = dataCadastro;
+	}
+	public Notebook() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	public void mostrar() {
+		System.out.println("\n\nNotebook:\n");
+		System.out.println("numeroLote: " + this.numeroLote);
+		System.out.println("modelo: " + this.modelo);
+		System.out.println("descricao: " + this.descricao);
+		System.out.println("estoque: " + this.estoque);
+		System.out.println("precoUnitario: " + this.precoUnitario);
+		System.out.println("figura: " + this.figura);
+		System.out.println("dataCadastro: " + this.dataCadastro);
+	}	
+
+		
+	
 }

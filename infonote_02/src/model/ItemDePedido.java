@@ -36,5 +36,21 @@ public class ItemDePedido {
 				+ getSubtotal() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
 				+ super.toString() + "]";
 	}
+	public ItemDePedido(int qtde, double subtotal) {
+		super();
+		this.qtde = qtde;
+		this.subtotal = subtotal;
+	}
+	public ItemDePedido() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
+	public void mostrar() {
+		System.out.println("\n\nItem de Pedido:\n");
+		System.out.println("qtde: " + this.qtde);
+		System.out.println("subtotal: " + this.subtotal);
+
+	}	
+	
 }
