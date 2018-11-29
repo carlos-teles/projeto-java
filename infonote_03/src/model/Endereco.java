@@ -1,6 +1,13 @@
 package model;
 
 public class Endereco {
+	private String logradouro;
+	private String numero;
+	private String complemento;
+	private String bairro;
+	private String cidade;
+	private String estado;
+	private String cep;
 	/**
 	 * @return the logradouro
 	 */
@@ -85,13 +92,6 @@ public class Endereco {
 	public void setCep(String cep) {
 		this.cep = cep;
 	}
-	String logradouro;
-	String numero;
-	String complemento;
-	String bairro;
-	String cidade;
-	String estado;
-	String cep;
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
@@ -104,5 +104,31 @@ public class Endereco {
 				+ getEstado() + ", getCep()=" + getCep() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
 				+ ", toString()=" + super.toString() + "]";
 	}
+	public Endereco(String logradouro, String numero, String complemento, String bairro, String cidade, String estado,
+			String cep) {
+		super();
+		this.logradouro = logradouro;
+		this.numero = numero;
+		this.complemento = complemento;
+		this.bairro = bairro;
+		this.cidade = cidade;
+		this.estado = estado;
+		this.cep = cep;
+	}
+	public Endereco() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public void mostrar() {
+		System.out.println("\n\nEndereço:\n");
+		System.out.println("logradouro: " + this.logradouro);
+		System.out.println("numero: " + this.numero);
+		System.out.println("complemento: " + this.complemento);
+		System.out.println("bairro: " + this.bairro);
+		System.out.println("cidade: " + this.cidade);
+		System.out.println("estado: " + this.estado);
+		System.out.println("cep: " + this.cep);		
+	}	
 	
 }

@@ -1,11 +1,11 @@
 package model;
 
 public class Pedido {
-	int numero;
-	String dataEmissao;
-	String formaDePagamento;
-	double valorTotal;
-	String situacao;
+	private int numero;
+	private String dataEmissao;
+	private String formaDePagamento;
+	private double valorTotal;
+	private String situacao;
 	/**
 	 * @return the numero
 	 */
@@ -77,5 +77,24 @@ public class Pedido {
 				+ ", getValorTotal()=" + getValorTotal() + ", getSituacao()=" + getSituacao() + ", getClass()="
 				+ getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
 	}
-	
+	public Pedido(int numero, String dataEmissao, String formaDePagamento, double valorTotal, String situacao) {
+		super();
+		this.numero = numero;
+		this.dataEmissao = dataEmissao;
+		this.formaDePagamento = formaDePagamento;
+		this.valorTotal = valorTotal;
+		this.situacao = situacao;
+	}
+	public Pedido() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public void mostrar() {
+		System.out.println("\n\nPedido:\n");
+		System.out.println("numero: " + this.numero);
+		System.out.println("dataEmissao: " + this.dataEmissao);
+		System.out.println("formaDePagamento: " + this.formaDePagamento);
+		System.out.println("valorTotal: " + this.valorTotal);
+		System.out.println("Situacao: " + this.situacao);
+	}	
 }

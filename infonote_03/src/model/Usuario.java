@@ -1,12 +1,12 @@
 package model;
 
 public class Usuario {
-	int matricula;
-	String login;
-	String senha;
-	String nome;
-	String email;
-	String telefone;
+	private int matricula;
+	private String login;
+	private String senha;
+	private String nome;
+	private String email;
+	private String telefone;
 	/**
 	 * @return the matricula
 	 */
@@ -87,6 +87,28 @@ public class Usuario {
 		return "Usuario [matricula=" + matricula + ", login=" + login + ", senha=" + senha + ", nome=" + nome
 				+ ", email=" + email + ", telefone=" + telefone + "]";
 	}
-	
+	public Usuario() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Usuario(int matricula, String login, String senha, String nome, String email, String telefone) {
+		super();
+		this.matricula = matricula;
+		this.login = login;
+		this.senha = senha;
+		this.nome = nome;
+		this.email = email;
+		this.telefone = telefone;
+	}
+	public void mostrar() {
+		// Mostrar usuário
+		System.out.println("\n\nUsuário:\n");
+		System.out.println("Matrícula: " + this.matricula);
+		System.out.println("Login: " + this.login);
+		System.out.println("Senha: " + this.senha);
+		System.out.println("Nome: " + this.nome);
+		System.out.println("E-mail: " + this.email);
+		System.out.println("Telefone: " + this.telefone);
+	}
 	
 }
