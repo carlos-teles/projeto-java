@@ -1,7 +1,7 @@
 package model;
 
 public class Notebook {
-	private int numeroLote;
+	private int numeroNote;
 	private String modelo;
 	private String descricao;
 	private int estoque;
@@ -9,17 +9,17 @@ public class Notebook {
 	private String figura;
 	private String dataCadastro;
 	/**
-	 * @return the numeroLote
+	 * @return the numeroNote
 	 */
-	public int getNumeroLote() {
-		return numeroLote;
+	public int getnumeroNote() {
+		return numeroNote;
 	}
 
 	/**
-	 * @param numeroLote the numeroLote to set
+	 * @param numeroNote the numeroNote to set
 	 */
-	public void setNumeroLote(int numeroLote) {
-		this.numeroLote = numeroLote;
+	public void setnumeroNote(int numeroNote) {
+		this.numeroNote = numeroNote;
 	}
 
 	/**
@@ -106,10 +106,10 @@ public class Notebook {
 		this.dataCadastro = dataCadastro;
 	}
 
-	public Notebook(int numeroLote, String modelo, String descricao, int estoque, double precoUnitario, String figura,
+	public Notebook(int numeroNote, String modelo, String descricao, int estoque, double precoUnitario, String figura,
 			String dataCadastro) {
 		super();
-		this.numeroLote = numeroLote;
+		this.numeroNote = numeroNote;
 		this.modelo = modelo;
 		this.descricao = descricao;
 		this.estoque = estoque;
@@ -124,7 +124,7 @@ public class Notebook {
 	
 	public void mostrar() {
 		System.out.println("\n\nNotebook:\n");
-		System.out.println("numeroLote: " + this.numeroLote);
+		System.out.println("numeroNote: " + this.numeroNote);
 		System.out.println("modelo: " + this.modelo);
 		System.out.println("descricao: " + this.descricao);
 		System.out.println("estoque: " + this.estoque);

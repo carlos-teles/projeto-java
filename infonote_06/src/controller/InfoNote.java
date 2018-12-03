@@ -99,17 +99,33 @@ public class InfoNote {
 		System.out.println("=================================================");
 		System.out.println(" InfoNote - Cadastro de Usuários. ");
 		System.out.println("=================================================");
-		int matricula = Teclado.lerInt("Matrícula: ");
+
 		String login = Teclado.lerTexto("Login: ");
 		String senha = Teclado.lerTexto("Senha: ");
+		int tipo = 1;
+		String codigoCliente = Teclado.lerTexto("Codigo Cliente: ");
 		String nome = Teclado.lerTexto("Nome: ");
 		String email = Teclado.lerTexto("E-mail: ");
 		String telefone = Teclado.lerTexto("Telefone: ");
-		user = new Usuario(matricula, login, senha, nome, email, telefone);
+
+		String logradouro = Teclado.lerTexto("Logradouro: ");
+		String numero = Teclado.lerTexto("Numero: ");
+		String complemento = Teclado.lerTexto("Complemento: ");
+		String bairro = Teclado.lerTexto("Bairro: ");
+		String cidade = Teclado.lerTexto("Cidade: ");
+		String estado = Teclado.lerTexto("Estado: ");
+		String cep = Teclado.lerTexto("Cep: ");
+
+		Endereco endereco = new Endereco(logradouro, numero, complemento, bairro, cidade, estado, cep);
+
+		Cliente cli = new Cliente(login, senha, tipo, codigoCliente, nome, email, telefone, endereco);
+
 		System.out.println("=================================================");
 		System.out.println(" Usuário Cadastrado Com Sucesso. ");
 		System.out.println("=================================================");
-		System.out.println(user);
+		System.out.println(cli);
+		System.out.println(endereco);
+
 	}
 
 	public void buscarNotebook() {

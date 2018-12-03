@@ -30,7 +30,7 @@ public class Teste {
 		note1.setEstoque(5);
 		note1.setFigura("note01.jpg");
 		note1.setModelo("Vaio");
-		note1.setNumeroLote(1234);
+		note1.setnumeroNote(1234);
 		note1.setPrecoUnitario(5000.99);
 		System.out.println(note1.toString());
 		
@@ -40,7 +40,7 @@ public class Teste {
 		note2.setEstoque(5);
 		note2.setFigura("note01.jpg");
 		note2.setModelo("Vaio");
-		note2.setNumeroLote(1234);
+		note2.setnumeroNote(1234);
 		note2.setPrecoUnitario(5000.99);
 		System.out.println(note2.toString());
 		
@@ -50,7 +50,7 @@ public class Teste {
 		note3.setEstoque(5);
 		note3.setFigura("note01.jpg");
 		note3.setModelo("Vaio");
-		note3.setNumeroLote(1234);
+		note3.setnumeroNote(1234);
 		note3.setPrecoUnitario(5000.99);		
 		System.out.println(note3.toString());
 		
