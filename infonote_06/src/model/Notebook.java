@@ -131,5 +131,18 @@ public class Notebook {
 		System.out.println("precoUnitario: " + this.precoUnitario);
 		System.out.println("figura: " + this.figura);
 		System.out.println("dataCadastro: " + this.dataCadastro);
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Notebook [numeroNote=" + numeroNote + ", modelo=" + modelo + ", descricao=" + descricao + ", estoque="
+				+ estoque + ", precoUnitario=" + precoUnitario + ", figura=" + figura + ", dataCadastro=" + dataCadastro
+				+ "]";
 	}		
+	
+	
+	
 }

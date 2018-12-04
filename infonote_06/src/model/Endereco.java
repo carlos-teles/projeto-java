@@ -94,7 +94,7 @@ public class Endereco {
 	}
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
-	 */
+	 
 	@Override
 	public String toString() {
 		return "Endereco [logradouro=" + logradouro + ", numero=" + numero + ", complemento=" + complemento
@@ -104,6 +104,18 @@ public class Endereco {
 				+ getEstado() + ", getCep()=" + getCep() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
 				+ ", toString()=" + super.toString() + "]";
 	}
+	*/
+	
+	@Override
+	public String toString() {
+		final String ENTER = "\n";
+		String retValue = "";
+		retValue = "Informações sobre o Endereco do cliente:" + ENTER + super.toString() + "Logradouro: " + logradouro
+				+ ENTER + "Numero: " + numero + ENTER + "Complemento: " + complemento + ENTER + "Bairro: " + bairro + ENTER
+				+ "Cidade: " + cidade + ENTER + ", Estado: " + estado + ENTER + ", CEP:" +  ENTER ;
+		return retValue;
+	}	
+	
 	public Endereco(String logradouro, String numero, String complemento, String bairro, String cidade, String estado,
 			String cep) {
 		super();
