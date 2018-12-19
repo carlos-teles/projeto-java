@@ -5,12 +5,22 @@ import java.util.Locale;
 
 public class Notebook {
 	private int numeroNote;
+	private String serialNote;
 	private String modelo;
 	private String descricao;
 	private int estoque;
 	private double precoUnitario;
 	private String figura;
 	private String dataCadastro;
+	private int id_notebook;
+
+	/**
+	 * @return the id_notebook
+	 */
+	public int getId_notebook() {
+		return id_notebook;
+	}
+
 	/**
 	 * @return the numeroNote
 	 */
@@ -120,11 +130,12 @@ public class Notebook {
 		this.figura = figura;
 		this.dataCadastro = dataCadastro;
 	}
+
 	public Notebook() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	public void mostrar() {
 		System.out.println("\n\nNotebook:\n");
 		System.out.println("numeroNote: " + this.numeroNote);
@@ -136,27 +147,46 @@ public class Notebook {
 		System.out.println("dataCadastro: " + this.dataCadastro);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
-	public String toString(){
-	final String ENTER = "\n";
-	String retValue = "";
-	Locale local = new Locale("pt", "BR");
-	retValue = "Informações sobre Notebook:" + ENTER +
-	"Número de Série do Notebook: " + numeroNote + ENTER +
-	"Modelo: " + modelo + ENTER +
-	"Descricao: " + descricao + ENTER +
-	"Estoque: " + estoque + ENTER +
-	"Preço Unitario: " +
-	NumberFormat.getCurrencyInstance(local).format(this.precoUnitario) +
-	ENTER +
-	"Figura: " + figura + ENTER +
-	"Data de cadastro: " + dataCadastro;
-	return retValue;
+	public String toString() {
+		final String ENTER = "\n";
+		String retValue = "";
+		Locale local = new Locale("pt", "BR");
+		retValue = "Informações sobre Notebook:" + ENTER + "Número de Série do Notebook: " + numeroNote + ENTER
+				+ "Modelo: " + modelo + ENTER + "Descricao: " + descricao + ENTER + "Estoque: " + estoque + ENTER
+				+ "Preço Unitario: " + NumberFormat.getCurrencyInstance(local).format(this.precoUnitario) + ENTER
+				+ "Figura: " + figura + ENTER + "Data de cadastro: " + dataCadastro;
+		return retValue;
+	}
+
+	public Notebook(int numeroNote, String serialNote, String modelo, String descricao, int estoque, double precoUnitario, String figura,
+			String dataCadastro) {
+		super();
+		this.numeroNote = numeroNote;
+		this.serialNote = serialNote;
+		this.modelo = modelo;
+		this.descricao = descricao;
+		this.estoque = estoque;
+		this.precoUnitario = precoUnitario;
+		this.figura = figura;
+		this.dataCadastro = dataCadastro;
 	}	
 	
-	
-	
+	public Notebook( String serialNote, String modelo, String descricao, int estoque, double precoUnitario, String figura,
+			String dataCadastro) {
+		super();
+		this.numeroNote = numeroNote;
+		this.serialNote = serialNote;
+		this.modelo = modelo;
+		this.descricao = descricao;
+		this.estoque = estoque;
+		this.precoUnitario = precoUnitario;
+		this.figura = figura;
+		this.dataCadastro = dataCadastro;
+	}		
 }

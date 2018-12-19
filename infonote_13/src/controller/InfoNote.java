@@ -7,6 +7,8 @@ import java.util.Locale;
 import model.*;
 import model.DAO.ClienteDAO;
 import model.DAO.EnderecoDAO;
+import model.DAO.FuncionarioDAO;
+import model.DAO.NotebookDAO;
 import model.DAO.UsuarioDAO;
 import util.Ajuda;
 import util.Configurador;
@@ -34,7 +36,8 @@ public class InfoNote {
 	private static final int VER_CARRINHO = 6;
 	private static final int EFETUAR_COMPRA = 7;
 	private static final int AJUDA = 8;
-	private static final int SAIR = 9;
+	private static final int AREA_ADMINISTRATIVA = 9;
+	private static final int SAIR = 10;
 
 	public InfoNote() {
 		// Cria objeto de configurações
@@ -75,7 +78,8 @@ public class InfoNote {
 				info.cadastrarUsuario();
 				break;
 			case BUSCAR_NOTEBOOK:
-				info.buscarNotebook();
+				//info.buscarNotebook();
+				info.mostrarNotebooks();
 				break;
 			case INSERIR_NOTEBOOK:
 				info.manterCarrinho();
@@ -99,6 +103,9 @@ public class InfoNote {
 				break;
 			case OPCAOInvalida:
 				System.out.println("Opção Inválida.");
+				break;
+			case AREA_ADMINISTRATIVA:
+				info.areaAdministrativa();
 				break;
 			case SAIR:
 				System.out.println("Saída do Sistema");
@@ -127,7 +134,8 @@ public class InfoNote {
 		System.out.println("6 - ver Carrinho");
 		System.out.println("7 - Efetuar Compra");
 		System.out.println("8 - Ajuda");
-		System.out.println("9 - Sair");
+		System.out.println("9 - Área Administrativa");
+		System.out.println("10 - Sair");
 	}
 
 	public void efetuarLogin() {
@@ -259,4 +267,96 @@ public class InfoNote {
 		System.out.println(ajuda.getTexto());
 	}
 
+	public void efetuarLoginAdm() {
+		String login, senha;
+		login = Teclado.lerTexto("Digite o login: ");
+		senha = Teclado.lerTexto("Digite a senha: ");
+		Funcionario funcionario = FuncionarioDAO.buscarPorLoginSenha(login, senha);
+		if (funcionario != null) {
+			logado = funcionario.validarLogin(login, senha);
+		} else {
+			if (logado) {
+				System.out.println("Login efetuado com sucesso!");
+			} else {
+				System.out.println("Usuário ou senha inválido.");
+			}
+		}
+	}
+
+	public void areaAdministrativa() {
+		InfoNote info = new InfoNote();
+		efetuarLoginAdm();
+		System.out.println("Opções Administrativas\n");
+		System.out.println("1 - Cadastrar Notebook");
+		System.out.println("2 - Mostrar Notebooks");
+		System.out.println("3 - Editar Notebook");
+		System.out.println("4 - Excluir Notebook");
+		System.out.println("5 - Sair");
+		int opcao = 5;
+		do {
+			opcao = Teclado.lerInt("Digite sua opção: ");
+			switch (opcao) {
+			case 1:
+				info.cadastrarNotebook();
+				break;
+			case 2:
+				info.mostrarNotebooks();
+				break;
+			case 3:
+				info.editarNotebook();
+				break;
+			case 4:
+				info.excluirNotebook();
+				break;
+			case 5:
+				System.out.println("Saída do Sistema");
+				break;
+			default:
+				System.out.println("Opção inválida!");
+			}
+			Teclado.lerTexto("Pressione uma tecla para continuar...");
+		} while (opcao != 5);
+	}
+
+	private void excluirNotebook() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void editarNotebook() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void mostrarNotebooks() {
+		Notebook[] notebook = NotebookDAO.buscarTodos();
+		for (int i = 0; i < notebook.length; i++) {
+			if (notebook[i] != null) {
+				System.out.println(notebook[i].getId_notebook() + "-----" + notebook[i].getnumeroNote() + "-----"
+						+ notebook[i].getModelo() + "-----" + notebook[i].getDescricao() + "-----"
+						+ notebook[i].getEstoque() + "-----" + notebook[i].getPrecoUnitario()	);
+			}
+		}
+	}	
+
+	private void cadastrarNotebook() {
+		// TODO Auto-generated method stub
+		
+	
+		System.out.println("====================================");
+		System.out.println(" Cadastro de Notebook ");
+		System.out.println("====================================");
+		String serialNote = Teclado.lerTexto("SeriaNote: ");
+		String modelo = Teclado.lerTexto("Modelo: ");
+		String descricao = Teclado.lerTexto("Descricao: ");
+		int estoque = Teclado.lerInt("Estoque: ");
+		double precoUnitario = Teclado.lerDouble("Preço Unitário: ");
+		String figura = Teclado.lerTexto("Figura: ");
+		String dataCadastro = Teclado.lerTexto("Data de Cadastro: ");
+		
+		Notebook notebook = NotebookDAO.inserir(serialNote, modelo, descricao,
+				estoque, precoUnitario, figura,
+				dataCadastro);
+		System.out.println(notebook);	
+	}
 }
