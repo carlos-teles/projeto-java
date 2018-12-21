@@ -188,5 +188,19 @@ public class Notebook {
 		this.precoUnitario = precoUnitario;
 		this.figura = figura;
 		this.dataCadastro = dataCadastro;
+	}
+
+	/**
+	 * @return the serialNote
+	 */
+	public String getSerialNote() {
+		return serialNote;
+	}
+
+	/**
+	 * @param serialNote the serialNote to set
+	 */
+	public void setSerialNote(String serialNote) {
+		this.serialNote = serialNote;
 	}		
 }

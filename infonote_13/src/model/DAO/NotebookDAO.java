@@ -105,7 +105,7 @@ public class NotebookDAO {
 		NotebookDAO noteDAO = new NotebookDAO();
 		try {
 			// Criação do insert
-			String sql = "delete from notebook where serianote = ?";
+			String sql = "delete from notebook where serialnote = ?";
 			// Obter a conexão com o banco de dados
 			Conexao conex = new Conexao(noteDAO.url, noteDAO.driver, noteDAO.login, noteDAO.senha);
 			// Abrir a conexão

@@ -324,6 +324,15 @@ public class InfoNote {
 	private void excluirNotebook() {
 		// TODO Auto-generated method stub
 		
+		
+			System.out.println("====================================");
+			System.out.println(" Excluir de Notebook ");
+			System.out.println("====================================");
+			String serialNote = Teclado.lerTexto("Informe o SeriaNote do Notebook a ser excluido: ");
+			
+			Notebook notebook = NotebookDAO.excluir(serialNote);
+			//System.out.println(notebook);	
+		
 	}
 
 	private void editarNotebook() {
@@ -342,7 +351,7 @@ public class InfoNote {
 		Notebook[] notebook = NotebookDAO.buscarTodos();
 		for (int i = 0; i < notebook.length; i++) {
 			if (notebook[i] != null) {
-				System.out.println(notebook[i].getId_notebook() + "-----" + notebook[i].getnumeroNote() + "-----"
+				System.out.println(notebook[i].getSerialNote() + "-----"
 						+ notebook[i].getModelo() + "-----" + notebook[i].getDescricao() + "-----"
 						+ notebook[i].getEstoque() + "-----" + notebook[i].getPrecoUnitario()	);
 			}
