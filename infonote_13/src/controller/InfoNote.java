@@ -166,6 +166,7 @@ public class InfoNote {
 						break;
 					case 3:
 						System.out.println("Obrigado e volte sempre!");
+						System.exit(0);
 						break;
 					default:
 						System.out.println("Opção inválida");
@@ -279,6 +280,7 @@ public class InfoNote {
 				System.out.println("Login efetuado com sucesso!");
 			} else {
 				System.out.println("Usuário ou senha inválido.");
+				System.exit(0);
 			}
 		}
 	}
@@ -310,6 +312,7 @@ public class InfoNote {
 				break;
 			case 5:
 				System.out.println("Saída do Sistema");
+				System.exit(0);
 				break;
 			default:
 				System.out.println("Opção inválida!");
@@ -325,6 +328,13 @@ public class InfoNote {
 
 	private void editarNotebook() {
 		// TODO Auto-generated method stub
+		System.out.println("====================================");
+		System.out.println(" Editar Notebook ");
+		System.out.println("====================================");
+		//int id = Teclado.lerInt("Digite o número id da mensagem a ser editada:");
+		//String mensagem = Teclado.lerTexto("Mensagem: ");
+		//NotebookDAO.atualizar(mensagem, id);
+		//System.out.println("Mensagem atualizada com sucesso");
 		
 	}
 

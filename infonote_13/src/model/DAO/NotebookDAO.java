@@ -29,8 +29,9 @@ public class NotebookDAO {
 			NotebookDAO noteDAO = new NotebookDAO();
 		try {
 			// Criação do insert
-			String sql = "insert into endereco " + "(serialnote, modelo, descricao, "
+			String sql = "insert into notebook " + "(serialnote, modelo, descricao, "
 					+ "estoque, precoUnitario, figura, dataCadastro)" + " values (?,?,?,?,?,?,?)";
+			//System.out.println(sql);
 			// Obter a conexão com o banco de dados
 			Conexao conex = new Conexao(noteDAO.url, noteDAO.driver, noteDAO.login, noteDAO.senha);
 			// Abrir a conexão
@@ -80,7 +81,6 @@ public class NotebookDAO {
 			int i = 0;
 			while (rs.next()) {
 				notebook[i++] = new Notebook(
-						rs.getInt("id_notebook"), 
 						rs.getString("serialnote"), 
 						rs.getString("modelo"),
 						rs.getString("descricao"),
@@ -100,19 +100,19 @@ public class NotebookDAO {
 		return notebook;
 	}	
 	
-	public static Notebook excluir(int id){
+	public static Notebook excluir(String id){
 		Notebook notebook = null;
 		NotebookDAO noteDAO = new NotebookDAO();
 		try {
 			// Criação do insert
-			String sql = "delete from notebook where id_notebook = ?";
+			String sql = "delete from notebook where serianote = ?";
 			// Obter a conexão com o banco de dados
 			Conexao conex = new Conexao(noteDAO.url, noteDAO.driver, noteDAO.login, noteDAO.senha);
 			// Abrir a conexão
 			Connection con = conex.obterConexao();
 			// Preparar o comando para ser executado
 			PreparedStatement comando = con.prepareStatement(sql);
-			comando.setInt(1,id);
+			comando.setString(1,id);
 			comando.executeUpdate();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -129,7 +129,7 @@ public class NotebookDAO {
 			//exceto serialnote e modelo
 			String sql = "update notebook set mensagem = ?"
 					+ " where "
-					+ " id_notebook = ? ";
+					+ " serialnote = ? ";
 			// Obter a conexão com o banco de dados
 			Conexao conex = new Conexao(noteDAO.url, noteDAO.driver, noteDAO.login, noteDAO.senha);			
 			// Abrir a conexão
