@@ -340,10 +340,16 @@ public class InfoNote {
 		System.out.println("====================================");
 		System.out.println(" Editar Notebook ");
 		System.out.println("====================================");
-		//int id = Teclado.lerInt("Digite o número id da mensagem a ser editada:");
-		//String mensagem = Teclado.lerTexto("Mensagem: ");
-		//NotebookDAO.atualizar(mensagem, id);
-		//System.out.println("Mensagem atualizada com sucesso");
+		String serialNote = Teclado.lerTexto("Informe o SeriaNote do Notebook a ser atualizado: ");
+		String descricao = Teclado.lerTexto("Descricao: ");
+		int estoque = Teclado.lerInt("Estoque: ");
+		double precoUnitario = Teclado.lerDouble("Preço Unitário: ");
+		String figura = Teclado.lerTexto("Figura: ");
+		String dataCadastro = Teclado.lerTexto("Data de Cadastro: ");
+		
+		
+		Notebook notebook = NotebookDAO.atualizar(serialNote, descricao, estoque, precoUnitario, figura, dataCadastro);
+		System.out.println("Notebook atualizado com sucesso");
 		
 	}
 
@@ -353,7 +359,9 @@ public class InfoNote {
 			if (notebook[i] != null) {
 				System.out.println(notebook[i].getSerialNote() + "-----"
 						+ notebook[i].getModelo() + "-----" + notebook[i].getDescricao() + "-----"
+						+ notebook[i].getFigura() + "-----" + notebook[i].getDataCadastro() + "-----"
 						+ notebook[i].getEstoque() + "-----" + notebook[i].getPrecoUnitario()	);
+				
 			}
 		}
 	}	

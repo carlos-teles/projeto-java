@@ -121,13 +121,15 @@ public class NotebookDAO {
 		return notebook;
 	}		
 
-	public static Notebook atualizar(String descricao, int estoque, double precoUnitario, String figura, String dataCadastro, int id){
+	public static Notebook atualizar(String serialNote, String descricao, int estoque, double precoUnitario, String figura, String dataCadastro){
 		Notebook notebook = null;
 		NotebookDAO noteDAO = new NotebookDAO();
 		try {
 			// Criação do update
 			//exceto serialnote e modelo
-			String sql = "update notebook set mensagem = ?"
+			String sql = "update notebook set "
+					+ " descricao = ?, estoque = ?, precoUnitario = ?, "
+					+ " figura = ?, dataCadastro = ? "
 					+ " where "
 					+ " serialnote = ? ";
 			// Obter a conexão com o banco de dados
@@ -141,7 +143,7 @@ public class NotebookDAO {
 			comando.setDouble(3,precoUnitario);
 			comando.setString(4,figura);
 			comando.setString(5,dataCadastro);
-			comando.setInt(6,id);
+			comando.setString(6,serialNote);
 				
 			
 			// Comando executado
